@@ -3,6 +3,7 @@
 projectDir= # Replace, should end in a '/'
 genome=hg38 # Replace, options: just hg38 until someone downloads mm10
 res=1kb # Replace, options: 1kb, 3kb, 5kb
+map=1 # Replace, should we map or just call loops on pre-mapped data? 1 for yes, 0 for no
 email="" # Replace
 threads=32 # Replace
 
@@ -36,7 +37,7 @@ do
     fastqDir=${projectDir}/data/${sample}
 
     # Run the software
-    arima-chic -Y 1 -Z 1 -A ${bowtie} -X ${hicref} -d ${digest} \
+    arima-chic -W ${map} -Y 1 -Z 1 -A ${bowtie} -X ${hicref} -d ${digest} \
                -H ${hicup_path} -C ${chicago_path} -b ${chicago_capture_probes} \
                -I ${fastqDir}/${sample}_R1.fastq,${fastqDir}/${sample}_R2.fastq \
                -o ${covDir} -p ${sample} -R ${chicago_rmap} \
