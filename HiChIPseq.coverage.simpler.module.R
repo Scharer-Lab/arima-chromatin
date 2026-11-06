@@ -8,7 +8,7 @@ library(latticetools) # get_repelled_labels()
 library(eulerr)
 library(stringr) # str_count()
 library(ggrepel)
-source("/home/boss_lab/Apps/bitbucket/pca/PCA.theme.module.R") # Magic, plot theme
+source(local({ root <- Sys.getenv("SCHARER_LAB_REPOS"); if (!nzchar(root)) stop("Set SCHARER_LAB_REPOS to the directory containing the Scharer-Lab repositories"); file.path(root, "pca", "PCA.theme.module.R") })) # plot theme
 library(data.table)
 
 # Constants ----
