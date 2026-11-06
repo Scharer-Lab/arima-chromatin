@@ -27,3 +27,23 @@ This README would normally document whatever steps are necessary to get your app
 
 * Repo owner or admin
 * Other community or team contact
+
+
+## Shared R script dependencies
+
+The affected scripts load shared R code from local Scharer-Lab repository
+checkouts rather than a machine-specific absolute path. Clone the following
+repositories as sibling directories using the names shown:
+
+- [pca](https://github.com/Scharer-Lab/pca)
+
+Set `SCHARER_LAB_REPOS` to the absolute path of their parent directory before
+running or sourcing the scripts. For example:
+
+```sh
+export SCHARER_LAB_REPOS="$HOME/scharer-lab"
+```
+
+The target files must be present in those checkouts. Access to private
+repositories requires the appropriate GitHub permissions. This does not install
+R packages, reference genomes, external tools, or project data.

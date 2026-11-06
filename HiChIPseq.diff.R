@@ -8,7 +8,7 @@ library(ggnewscale)
 library(tidyverse)
 library(dplyr)
 library(GenomicRanges)
-source("/home/boss_lab/Apps/bitbucket/pca/PCA.theme.module.R") # Magic, plot theme
+source(local({ root <- Sys.getenv("SCHARER_LAB_REPOS"); if (!nzchar(root)) stop("Set SCHARER_LAB_REPOS to the directory containing the Scharer-Lab repositories"); file.path(root, "pca", "PCA.theme.module.R") })) # plot theme
 library(data.table)
 library(geomtextpath) # for geom text paths, JM 05/25/2023
 
